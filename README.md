@@ -1,34 +1,38 @@
 # Babel - Exercício EBAC
 
-Este repositório é um exercício simples sobre o Babel para o curso Full Stack Java da EBAC. A ideia é mostrar como transpilar código moderno (ES6+) para uma versão compatível com navegadores/ambientes que ainda não suportam todos os recursos.
+Exercício rápido para demonstrar Babel transpiling ES6+ para compatibilidade ampla. O foco é ver na prática como o preset `@babel/preset-env` gera uma versão de saída consumível por runtimes mais antigos.
 
-## O que é o Babel?
-- Babel é um transpiler para JavaScript: ele lê código usando sintaxe moderna e gera uma saída equivalente em JS compatível com ambientes mais antigos.
-- Serve para manter uma base de código atualizada sem se preocupar com limitações de suporte de runtimes ou navegadores.
+## Pré-requisitos
+- Node.js 18+.
+- npm (incluso no Node).
 
-## Como usar
-1) Instale as dependências:
+## Como rodar
+1. Instale dependências
 ```bash
 npm install
 ```
-2) Transpile de `src/` para `dist/`:
+2. Transpile de `src/` para `dist/`
 ```bash
 npm run build
 ```
-3) Execute o arquivo gerado:
+3. Execute os exemplos transpilados (escolha o arquivo):
 ```bash
-node dist/teste.js
+node dist/teste.js      # exemplo simples de transpile
+node dist/arrays.js     # demonstra metodos de array
 ```
 
-## Estrutura
-- `src/`: código-fonte em ES6+.
-- `dist/`: saída transpilada pelo Babel.
+## O que os exemplos fazem
+- `src/teste.js`: apenas imprime uma mensagem para validar o pipeline Babel.
+- `src/arrays.js`: percorre arrays, cria objetos com `map`, busca índice com `findIndex`, verifica condições com `every`/`some`, filtra com `filter`, e soma valores usando `map`, `reduce` e `for`.
 
 ## Scripts npm
-- `npm run build`: transpila o código de `src/` para `dist/` usando Babel.
+- `npm run build`: transpila todos os arquivos de `src/` para `dist/` usando Babel CLI e `@babel/preset-env`.
 
-## Pré-requisitos
-- Node.js 18+ (ou superior) instalado na máquina.
+## Estrutura
+- `src/`: código-fonte ES6+ (não compatível nativamente em runtimes antigos).
+- `dist/`: saída gerada pelo Babel (`npm run build`).
+- `babel.config.json`: preset `@babel/preset-env` configurado para targets definidos em `browserslist`.
 
-## Notas
-- Caso altere o código em `src/`, rode novamente `npm run build` para atualizar a saída em `dist/`.
+## Dicas rápidas
+- Sempre rode `npm run build` após modificar algo em `src/`.
+- Caso o comando `npm run build` não exista, confira se o `package.json` está no diretório raiz do projeto.
