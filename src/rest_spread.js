@@ -59,3 +59,10 @@ console.log(anoDoCarroDaJulia);
 
 const {ano: anoDoCarroDoPedro} = carroDoPedro;
 console.log(anoDoCarroDoPedro);
+
+const times = ["Flamengo", "Palmeiras", "Grêmio", "São Paulo"];
+const [time1, time2, ...outrosTimes] = times;
+
+console.log(time1); 
+console.log(time2); 
+console.log(outrosTimes);

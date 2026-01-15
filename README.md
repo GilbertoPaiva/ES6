@@ -19,11 +19,15 @@ npm run build
 ```bash
 node dist/teste.js      # exemplo simples de transpile
 node dist/arrays.js     # demonstra metodos de array
+node dist/arrow.js      # demonstra arrow functions e closures
+node dist/rest_spread.js# exemplos de rest, spread e destructuring
 ```
 
 ## O que os exemplos fazem
 - `src/teste.js`: apenas imprime uma mensagem para validar o pipeline Babel.
 - `src/arrays.js`: percorre arrays, cria objetos com `map`, busca índice com `findIndex`, verifica condições com `every`/`some`, filtra com `filter`, e soma valores usando `map`, `reduce` e `for`.
+- `src/arrow.js`: mostra usos de arrow functions (retorno implícito, `map`/`filter`/`reduce`) e um factory `criarPessoa` que usa fechamento para armazenar estado e expõe método `aniversario` como arrow.
+- `src/rest_spread.js`: compara a soma com `arguments` vs rest params, multiplica listas com rest, soma com `reduce`, combina arrays/objetos com spread e faz destructuring de objetos e arrays.
 
 ## Scripts npm
 - `npm run build`: transpila todos os arquivos de `src/` para `dist/` usando Babel CLI e `@babel/preset-env`.
